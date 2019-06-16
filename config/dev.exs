@@ -4,8 +4,8 @@ use Mix.Config
 config :scentenced, Scentenced.Repo,
   username: "postgres",
   password: "postgres",
-  database: "scentenced",
-  hostname: "db",
+  database: "scentenced_dev",
+  hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

@@ -35,3 +35,4 @@ npm-debug.log
 *.swp
 *.tar
 *backup*.sql
+.DS_Store

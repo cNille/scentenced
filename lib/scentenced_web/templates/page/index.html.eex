@@ -1,6 +1,7 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
+  <h1>SCENTenced to smell good!</h1>
+  <p>Keep track of fragrants you like and create your own
+  perfume recipies!</p>
 </section>
 
 <section class="row">
