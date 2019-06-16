@@ -18,7 +18,7 @@ defmodule Scentenced.Fragrants do
 
   """
   def list_fragrants do
-    Repo.all(Fragrant)
+    Repo.all(from f in Fragrant, order_by: f.name )
   end
 
   @doc """
