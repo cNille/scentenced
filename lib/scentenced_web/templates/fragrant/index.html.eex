@@ -1,0 +1,36 @@
+<h1>Listing Fragrants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Name (eng)</th>
+      <th>Description</th>
+      <th>Blending factor</th>
+      <th>Note</th>
+      <th>Family</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for fragrant <- @fragrants do %>
+    <tr>
+      <td><%= fragrant.name %></td>
+      <td><%= fragrant.name_eng %></td>
+      <td><%= fragrant.description %></td>
+      <td><%= fragrant.blending_factor %></td>
+      <td><%= fragrant.note %></td>
+      <td><%= fragrant.family %></td>
+
+      <td>
+        <%= link "Show", to: Routes.fragrant_path(@conn, :show, fragrant) %>
+        <%= link "Edit", to: Routes.fragrant_path(@conn, :edit, fragrant) %>
+        <%= link "Delete", to: Routes.fragrant_path(@conn, :delete, fragrant), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Fragrant", to: Routes.fragrant_path(@conn, :new) %></span>

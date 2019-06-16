@@ -1,0 +1,34 @@
+<h1>Show Fragrant</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @fragrant.name %>
+    (<%= @fragrant.name_eng %>)
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @fragrant.description %>
+  </li>
+
+  <li>
+    <strong>Blending factor:</strong>
+    <%= @fragrant.blending_factor %>
+  </li>
+
+  <li>
+    <strong>Note:</strong>
+    <%= @fragrant.note %>
+  </li>
+
+  <li>
+    <strong>Family:</strong>
+    <%= @fragrant.family %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.fragrant_path(@conn, :edit, @fragrant) %></span>
+<span><%= link "Back", to: Routes.fragrant_path(@conn, :index) %></span>

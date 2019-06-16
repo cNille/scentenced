@@ -1,0 +1,5 @@
+<h1>Edit Fragrant</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.fragrant_path(@conn, :update, @fragrant)) %>
+
+<span><%= link "Back", to: Routes.fragrant_path(@conn, :index) %></span>
