@@ -1,0 +1,29 @@
+<h1>Listing Perfumes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Family</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for perfume <- @perfumes do %>
+    <tr>
+      <td><%= perfume.name %></td>
+      <td><%= perfume.description %></td>
+      <td><%= perfume.family %></td>
+
+      <td>
+        <%= link "Show", to: Routes.perfume_path(@conn, :show, perfume) %>
+        <%= link "Edit", to: Routes.perfume_path(@conn, :edit, perfume) %>
+        <%= link "Delete", to: Routes.perfume_path(@conn, :delete, perfume), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Perfume", to: Routes.perfume_path(@conn, :new) %></span>

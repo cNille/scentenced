@@ -1,0 +1,22 @@
+<h1>Show Perfume</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @perfume.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @perfume.description %>
+  </li>
+  <li>
+    <strong>Family:</strong>
+    <%= @perfume.family %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.perfume_path(@conn, :edit, @perfume) %></span>
+<span><%= link "Back", to: Routes.perfume_path(@conn, :index) %></span>

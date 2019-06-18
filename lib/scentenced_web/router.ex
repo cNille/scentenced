@@ -18,6 +18,7 @@ defmodule ScentencedWeb.Router do
 
     get "/", PageController, :index
     resources "/fragrant", FragrantController
+    resources "/perfume", PerfumeController
   end
 
   # Other scopes may use custom stacks.

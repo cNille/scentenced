@@ -1,4 +1,4 @@
-defmodule Scentenced.Fragrants.Fragrant do
+defmodule Scentenced.Perfumes.Fragrant do
   use Ecto.Schema
   import Ecto.Changeset
 
