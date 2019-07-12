@@ -13,6 +13,7 @@ ENV PORT ${PORT:-4000}
 ENV DATABASE_URL ecto://postgres:postgres@db
 EXPOSE $PORT
 
+
 # Install hex (Elixir package manager)
 RUN mix local.hex --force
 
@@ -28,12 +29,14 @@ RUN mix deps.get
 # Compile all dependencies
 RUN mix deps.compile
 
+
 # Copy all application files
 COPY . .
 
-# RUN mix do compile
-
-# RUN mix ecto.create
+# Install node
+RUN curl -sL https://deb.nodesource.com/setup_9.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh
+RUN apt-get install nodejs
 
 # Run entrypoint to setup server when psql server is up.
 CMD ["/app/entrypoint.sh"]

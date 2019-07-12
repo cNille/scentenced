@@ -1,7 +1,9 @@
 #!/bin/bash
 # Docker entrypoint script.
 
-echo "HEJHEJHEJ"
+# Install JS libraries
+cd assets && npm install && npm run deploy
+cd ..
 
 # Wait until Postgres is ready
 while ! pg_isready -q -h $PGHOST -p $PGPORT -U $PGUSER
