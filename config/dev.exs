@@ -2,9 +2,9 @@ use Mix.Config
 
 # Configure your database
 config :scentenced, Scentenced.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "scentenced",
+  username: System.get_env("PGUSER"),
+  password: System.get_env("PGPASSWORD"),
+  database: System.get_env("PGDATABASE"),
   hostname: "db",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
