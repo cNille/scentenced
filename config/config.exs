@@ -22,6 +22,20 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+# Configures Guardian
+config :scentenced, Scentenced.Auth.Guardian,Guardian.DB,
+  issuer: "scentenced",
+  secret_key: "sV0qr6zkfuao+SjQoCuksj6VUiI+bkMcgaixZUUQP48IlioPwG4MuoSS/y9FraQE",
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  ttl: { 30, :days },
+  verify_issuer: true, # optional
+  serializer: MyApp.GuardianSerializer
+
+config :scentenced, Scentenced.Auth.AuthAccessPipeline,
+  module: Scentenced.Auth.Guardian,
+  error_handler: Scentenced.Auth.AuthErrorHandler
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 

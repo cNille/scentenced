@@ -1,11 +1,7 @@
 /* This file is for your main application css. */
 
-/* @import "./phoenix.css"; */
+@import "./phoenix.css";
 @import "./bootstrap.css";
-
-.alert:empty {
-  display: none;
-}
 
 body {
   min-height: 75rem;

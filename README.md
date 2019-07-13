@@ -1,6 +1,9 @@
 # SCENTENCED
 SCENTENCED to smell good. A website where you can store your reviews on perfumes, data about ingredients and store your recipes for perfumes
 
+Tips:
+- To play with ecto in iex. Run `iex -S mix`, then you can do 
+  `import Ecto.Query` and start playing. To get users run: Scentenced.Repo.all(Scentenced.Accounts.User)
 
 ## DevOps
 

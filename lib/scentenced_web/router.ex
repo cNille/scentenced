@@ -13,11 +13,25 @@ defmodule ScentencedWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug(Scentenced.Auth.AuthAccessPipeline)
+  end
+
   scope "/", ScentencedWeb do
+    #aoeu
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/users", UserController, only: [:index, :new, :create]
+    resources "/sessions", SessionController, only: [:new, :create]
+  end
+
+  scope "/", ScentencedWeb do
+    pipe_through [:browser, :auth]
+
+    resources "/users", UserController, only: [:index, :show]
     resources "/fragrant", FragrantController
+    resources "/sessions", SessionController, only: [:delete]
     resources "/perfume", PerfumeController
   end
 
