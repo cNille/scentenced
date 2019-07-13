@@ -1,6 +1,9 @@
 <h1>Listing Fragrants</h1>
 
-<table>
+<%= link "New Fragrant", to: Routes.fragrant_path(@conn, :new), class: "btn btn-primary", role: "button" %>
+<hr />
+
+<table class="table" >
   <thead>
     <tr>
       <th>Name</th>
@@ -16,7 +19,7 @@
   <tbody>
 <%= for fragrant <- @fragrants do %>
     <tr>
-      <td><%= fragrant.name %></td>
+      <td><%= link fragrant.name, to: Routes.fragrant_path(@conn, :show, fragrant) %></td>
       <td><%= fragrant.name_eng %></td>
       <td><%= fragrant.description %></td>
       <td><%= fragrant.blending_factor %></td>
@@ -24,7 +27,6 @@
       <td><%= fragrant.family %></td>
 
       <td>
-        <%= link "Show", to: Routes.fragrant_path(@conn, :show, fragrant) %>
         <%= link "Edit", to: Routes.fragrant_path(@conn, :edit, fragrant) %>
         <%= link "Delete", to: Routes.fragrant_path(@conn, :delete, fragrant), method: :delete, data: [confirm: "Are you sure?"] %>
       </td>
@@ -33,4 +35,3 @@
   </tbody>
 </table>
 
-<span><%= link "New Fragrant", to: Routes.fragrant_path(@conn, :new) %></span>

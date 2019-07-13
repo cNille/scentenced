@@ -5,31 +5,47 @@
     </div>
   <% end %>
 
-  <%= label f, :name %>
-  <%= text_input f, :name %>
-  <%= error_tag f, :name %>
+  <div class="row">
 
-  <%= label f, :name_eng %>
-  <%= text_input f, :name_eng %>
-  <%= error_tag f, :name_eng %>
+    <div class="form-group col-md-6">
+      <%= label f, :name %>
+      <%= text_input f, :name, class: "form-control" %>
+      <%= error_tag f, :name %>
+    </div>
 
-  <%= label f, :description %>
-  <%= text_input f, :description %>
-  <%= error_tag f, :description %>
+    <div class="form-group col-md-6">
+      <%= label f, :name_eng %>
+      <%= text_input f, :name_eng, class: "form-control" %>
+      <%= error_tag f, :name_eng %>
+    </div>
+  </div>
 
-  <%= label f, :blending_factor %>
-  <%= number_input f, :blending_factor %>
-  <%= error_tag f, :blending_factor %>
+    <div class="form-group">
+      <%= label f, :description %>
+      <%= text_input f, :description , class: "form-control" %>
+      <%= error_tag f, :description %>
+    </div>
 
-  <%= label f, :note %>
-  <%= text_input f, :note %>
-  <%= error_tag f, :note %>
+    <div class="form-group">
+      <%= label f, :blending_factor %>
+      <%= number_input f, :blending_factor , class: "form-control" %>
+      <%= error_tag f, :blending_factor %>
+    </div>
 
-  <%= label f, :family %>
-  <%= text_input f, :family %>
-  <%= error_tag f, :family %>
+    <div class="form-group">
+      <%= label f, :note %>
+      <%= text_input f, :note , class: "form-control" %>
+      <%= error_tag f, :note %>
+    </div>
+
+    <div class="form-group">
+      <%= label f, :family %>
+      <%= text_input f, :family , class: "form-control" %>
+      <%= error_tag f, :family %>
+    </div>
+
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>

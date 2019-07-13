@@ -2,4 +2,5 @@
 
 <%= render "form.html", Map.put(assigns, :action, Routes.perfume_path(@conn, :update, @perfume)) %>
 
-<span><%= link "Back", to: Routes.perfume_path(@conn, :index) %></span>
+<hr />
+<span><%= link "Back", to: Routes.perfume_path(@conn, :index), class: "btn btn-secondary" %></span>

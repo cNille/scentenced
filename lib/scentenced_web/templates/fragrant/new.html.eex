@@ -2,4 +2,5 @@
 
 <%= render "form.html", Map.put(assigns, :action, Routes.fragrant_path(@conn, :create)) %>
 
-<span><%= link "Back", to: Routes.fragrant_path(@conn, :index) %></span>
+<hr />
+<span><%= link "Back", to: Routes.fragrant_path(@conn, :index), class: "btn btn-secondary" %></span>
