@@ -2,10 +2,10 @@ use Mix.Config
 
 # Configure your database
 config :scentenced, Scentenced.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "scentenced_test",
-  hostname: "db",
+  username: System.get_env("PGUSER"),
+  password: System.get_env("PGPASSWORD"),
+  database: System.get_env("PGTESTDATABASE"),
+  hostname: System.get_env("PGHOST"),
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
