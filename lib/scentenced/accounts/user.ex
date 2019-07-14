@@ -27,7 +27,7 @@ defmodule Scentenced.Accounts.User do
 
   defp put_password_hash(changeset) do
     case changeset do
-      %Ecto.Changeset{valid?: truel, changes: %{password: pass}} ->
+      %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
         put_change(changeset, :password_hash, Bcrypt.hash_pwd_salt(pass))
 
     _ ->

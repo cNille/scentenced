@@ -23,7 +23,7 @@ config :logger, :console,
   metadata: [:request_id]
 
 # Configures Guardian
-config :scentenced, Scentenced.Auth.Guardian,Guardian.DB,
+config :scentenced, Scentenced.Auth.Guardian,
   issuer: "scentenced",
   secret_key: "sV0qr6zkfuao+SjQoCuksj6VUiI+bkMcgaixZUUQP48IlioPwG4MuoSS/y9FraQE",
   allowed_algos: ["HS512"], # optional

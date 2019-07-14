@@ -18,9 +18,9 @@ defmodule Scentenced.Auth do
   end
 
   def login(conn, user) do
-    conn = Guardian.Plug.sign_in(conn, user)
-    conn = assign(conn, :current_user, user)
-    put_user_token(conn, user)
+    conn
+    |> Guardian.Plug.sign_in(user)
+    |> put_user_token(user)
   end
 
   def logout(conn) do
@@ -30,22 +30,14 @@ defmodule Scentenced.Auth do
 
   def load_current_user(conn, _) do
     user = Guardian.Plug.current_resource(conn)
-
-    IO.puts "HEJHEJH"
-    user |> inspect() |> Logger.debug
-    IO.puts "HEJHEJH"
-
     conn
     |> assign(:current_user, user)
     |> put_user_token(user)
   end
 
   defp put_user_token(conn, user) do
-    IO.puts "WHAAT"
-    user |> inspect() |> Logger.debug
     token = Phoenix.Token.sign(conn, "user socket", user.id)
-
     conn
-    |> assign(:user_token, token)
+    |> put_session(:user_token, token)
   end
 end
